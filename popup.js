@@ -1,12 +1,31 @@
 var init = function(){
 
-var target = document.getElementById('target');
+var canvas = document.getElementById('canvas');
 
 window.addEventListener('message', function(e){
 
-	console.log(event.origin);
 
-	target.textContent = event.data;
+	var src = e.data;
+
+	if( ! src ) {
+		canvas.innerHTML = '';
+		return;
+	}
+
+
+	src = 'images/'+src;
+
+	var img = document.createElement('img');
+
+	img.onload = function(){
+
+		canvas.innerHTML = '';
+		
+		canvas.appendChild(img);
+
+	};
+
+	img.src = src;
 
 });
 

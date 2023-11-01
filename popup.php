@@ -11,9 +11,8 @@
 
 </head>
 <body>
-Hi
 
-<div id="target"></div>
+<div id="canvas" class="canvas"></div>
 
 </body>
 </html>

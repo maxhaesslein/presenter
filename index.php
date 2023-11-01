@@ -12,13 +12,24 @@
 </head>
 <body>
 
-<button id="openPopup">Open PopUp</button>
+<p><button id="openPopup">Open PopUp</button></p>
 
-<label><input type="radio" name="image" value="" checked disabled> ---</label>
-<label><input type="radio" name="image" value="test-1" disabled> Test 1</label>
-<label><input type="radio" name="image" value="test-2" disabled> Test 2</label>
-<label><input type="radio" name="image" value="test-3" disabled> Test 3</label>
-<label><input type="radio" name="image" value="test-4" disabled> Test 4</label>
+<label><input type="radio" name="image" value="" checked> <span class="none">- none -</span></label>
+<?php
+
+$path = 'images/';
+
+if( $handle = opendir($path) ){
+	while( false !== ($entry = readdir($handle)) ){
+
+		if( substr($entry, 0, 1) == '.' ) continue;
+
+		echo '<label><input type="radio" name="image" value="'.$entry.'"> <img src="'.$path.$entry.'" width="300"></label>';
+	}
+	closedir($handle);
+}
+
+?>
 
 </body>
 </html>

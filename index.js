@@ -8,10 +8,6 @@ button.addEventListener('click', function(){
 
 	popup = window.open('popup.php', 'Presenter Popup');
 
-	for( var radio of document.querySelectorAll('input[type="radio"]') ) {
-		radio.disabled = false;
-	}
-
 	button.remove();
 
 });
