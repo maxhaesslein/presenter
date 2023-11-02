@@ -25,16 +25,10 @@ include('helper.php');
 <label><input type="radio" name="image" value="" checked> <span class="none">- none -</span></label>
 <?php
 
-$path = 'images/';
+$images = get_images( 'images/', true );
 
-if( $handle = opendir($path) ){
-	while( false !== ($entry = readdir($handle)) ){
-
-		if( substr($entry, 0, 1) == '.' ) continue;
-
-		echo '<label><input type="radio" name="image" value="'.$entry.'"> <img src="'.$path.$entry.'" width="300"></label>';
-	}
-	closedir($handle);
+foreach( $images as $src ) {
+	echo '<label><input type="radio" name="image" value="'.$src.'"> <img src="'.$src.'" width="300"></label>';
 }
 
 ?>

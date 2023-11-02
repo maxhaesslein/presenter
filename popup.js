@@ -16,9 +16,6 @@ window.addEventListener('message', function(e){
 		return;
 	}
 
-
-	src = 'images/'+src;
-
 	var img = document.createElement('img');
 
 	img.onload = function(){
