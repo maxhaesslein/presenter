@@ -4,6 +4,10 @@ var canvas = document.getElementById('canvas');
 
 window.addEventListener('message', function(e){
 
+	if( e.origin !== Presenter.baseurl ) {
+		console.warn('nope.')
+		return;
+	}
 
 	var src = e.data;
 

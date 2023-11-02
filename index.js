@@ -12,7 +12,6 @@ button.addEventListener('click', function(){
 
 });
 
-
 var sendMessage = function(){
 
 	if( ! popup ) return;
@@ -21,7 +20,7 @@ var sendMessage = function(){
 		name = radio.name,
 		value = radio.value;
 
-	popup.postMessage(value);
+	popup.postMessage(value, Presenter.baseurl);
 }
 
 for( var radio of document.querySelectorAll('input[type="radio"]') ) {
