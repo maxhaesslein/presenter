@@ -6,7 +6,7 @@ var button = document.getElementById('openPopup');
 
 button.addEventListener('click', function(){
 
-	popup = window.open('popup.php', 'Presenter Popup');
+	popup = window.open('popup.php', 'PresenterPopup', 'popup=true');
 
 	button.remove();
 
