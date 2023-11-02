@@ -5,11 +5,9 @@ var popup = false;
 var button = document.getElementById('openPopup');
 
 button.addEventListener('click', function(){
-
 	popup = window.open('popup.php', 'PresenterPopup', 'popup=true');
-
-	button.remove();
-
+	button.textContent = 'Refresh PopUp';
+	document.querySelector('input[type="radio"][value=""]').checked = true;
 });
 
 var sendMessage = function(){
