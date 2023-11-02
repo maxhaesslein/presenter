@@ -27,7 +27,23 @@ include('helper.php');
 
 $images = get_images( 'images/', true );
 
+$last_path = '';
+
 foreach( $images as $src ) {
+
+	$src_path = explode('/', $src);
+	$filename = array_pop($src_path);
+
+	array_shift($src_path); // remove 'images/' from beginning
+
+	if( count($src_path) ) {
+		$src_path = implode('/', $src_path);
+		if( $last_path != $src_path ) {
+			echo '<h2>'.$src_path.'</h2>';
+			$last_path = $src_path;
+		}
+	}
+
 	echo '<label><input type="radio" name="image" value="'.$src.'"> <img src="'.$src.'" width="300"></label>';
 }
 

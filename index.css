@@ -8,6 +8,7 @@ label img,
 label .none {
 	display: block;
 	border: 5px solid #eee;
+	margin-right: 10px;
 }
 
 	label:hover img,
@@ -34,4 +35,8 @@ label input {
 	opacity: 0;
 	width: 0;
 	height: 0;
+}
+
+h2 {
+	margin: 2em 0 0;
 }
